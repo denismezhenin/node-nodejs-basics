@@ -7,7 +7,9 @@ const transform = async () => {
       callback(null, String(chunk).trim().split("").reverse().join("") + "\n");
     },
   });
-  pipeline(stdin, reverseString, stdout, (err) => console.log(err));
+  pipeline(stdin, reverseString, stdout, (err) => {
+    if (err) console.log(err);
+  });
 };
 
 await transform();

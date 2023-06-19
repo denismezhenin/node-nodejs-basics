@@ -5,7 +5,7 @@ import { spawn } from "child_process";
 const __dirname = getDirPath(import.meta.url);
 const fileToScriptPath = path.join(__dirname, "files", "script.js");
 
-const spawnChildProcess = async (args) => {
+const spawnChildProcess = (args) => {
   const childProcess = spawn("node", [fileToScriptPath, ...args], {
     stdio: [0, 1, "ipc"],
   });
